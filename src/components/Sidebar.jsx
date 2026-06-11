@@ -19,10 +19,6 @@ function Sidebar() {
             </NavLink> 
         </div>
     
-    );
-
-
-
-
+    ); 
 }
 export default Sidebar; 

@@ -1,26 +1,70 @@
-/* 
-   App.css - التنسيق العام للواجهة الرئيسية للمشروع
-   تصميم المستطيلات العائمة (Floating Layout)
-*/
-
 /* 1. الحاوية الكبرى التي تجمع القائمة والمحتوى */
 .app-container {
   display: flex;
-  flex-direction: row;     /* رص العناصر أفقياً بجانب بعضها */
-  direction: rtl;         /* اتجاه عربي من اليمين لليسار */
+  /* تغيير الـ direction إلى ltr لنضمن تحكم الـ flex بالترتيب، 
+     ثم نستخدم flex-direction: row-reverse ليضع القائمة يميناً */
+  direction: ltr; 
+  flex-direction: row-reverse; 
   min-height: 100vh;
-  background-color: #f1f5f9; /* لون خلفية رمادي هادئ جداً خلف المستطيلات */
+  background-color: #f1f5f9;
   font-family: 'Cairo', sans-serif;
+} 
+table {
+  width: 100%;
+  direction: rtl; /* هذا السطر يقلب ترتيب الأعمدة */
+  text-align: right;
+  border-collapse: collapse;
 }
 
-/* 2. المستطيل الكبير الذي يعرض محتوى الصفحات */
+th, td {
+  padding: 15px;
+  text-align: right; /* المحاذاة داخل الخلايا */
+}
+/* تنسيق الجدول العام */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: right; /* لضمان أن النصوص تبدأ من اليمين */
+}
+
+/* تنسيق العناوين (الرقم، الاسم، الخ..) */
+.styled-table th {
+  padding: 15px;
+  color: #64748b;
+  font-weight: 600;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+/* تنسيق الصفوف */
+.styled-table td {
+  padding: 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* تنسيق الأزرار (حظر الحساب/تنشيط) */
+.btn-action {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-danger { background-color: #fee2e2; color: #dc2626; } /* أحمر */
+.btn-success { background-color: #dcfce7; color: #16a34a; } /* أخضر */
+/* App.css - التنسيق العام */
+.app-container {
+  display: flex;
+  flex-direction: row-reverse; /* القائمة يميناً والمحتوى يساراً */
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  font-family: 'Cairo', sans-serif;
+  direction: ltr; /* مهم جداً لتنظيم الـ Flex */
+}
+
 .main-content {
-  flex: 1;                 /* خذ كل المساحة المتبقية من العرض */
-  background-color: #ffffff; 
-  margin: 20px 0 20px 20px; /* هوامش لجعل الصندوق يطفو (توب، رايت، بوتوم، ليفت) */
-  border-radius: 30px;     /* زوايا دائرية كبيرة وناعمة متناسقة مع السيدبار */
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* ظل خفيف جداً واحترافي */
-  min-height: calc(100vh - 40px);
-  overflow: auto;          /* إظهار سكرول داخلي عند الحاجة */
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
 }

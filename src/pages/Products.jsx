@@ -1,61 +1,64 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import DataTable from '../components/DataTable';
+import './Products.css';
 
 const Products = () => {
   const [products, setProducts] = useState([
     { id: 1, name: 'لابتوب ديل', price: '800$', stock: 10 },
-    { id: 2, name: 'ماوس لاسلكي', price: '20$', stock: 50 },
-    { id: 3, name: 'شاشة سامسونج', price: '150$', stock: 5 }
+    { id: 2, name: 'ماوس لاسلكي', price: '20$', stock: 50 }
   ]);
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [modal, setModal] = useState({ show: false, row: null });
+  const [reason, setReason] = useState('');
 
-  // دالة الحذف
-  const deleteProduct = (id) => {
-    setProducts(products.filter(p => p.id !== id));
+  const initiateDelete = (row) => {
+    setModal({ show: true, row });
   };
 
-  // دالة التعديل (يمكنك وضع منطق التعديل لاحقاً هنا)
-  const editProduct = (id) => {
-    alert(`جاري تعديل المنتج رقم: ${id}`);
+  const confirmDelete = () => {
+    if (!modal.row) return;
+    
+    console.log(`تم حذف المنتج ${modal.row.name} لسبب: ${reason}`);
+    setProducts(products.filter(p => p.id !== modal.row.id));
+    
+    setModal({ show: false, row: null });
+    setReason('');
   };
-
-  const filteredProducts = products.filter(p => 
-    p.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const columns = [
-    { header: 'الرقم', field: 'id' },
-    { header: 'اسم المنتج', field: 'name' },
-    { header: 'السعر', field: 'price' },
-    { header: 'الكمية', field: 'stock' }
-  ];
 
   return (
     <div className="products-page">
       <h1>إدارة المنتجات</h1>
       
-      <input 
-        type="text" 
-        className="search-input"
-        placeholder="ابحث عن منتج بالاسم..." 
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+      <DataTable 
+        columns={[
+          { header: 'اسم المنتج', field: 'name' }, 
+          { header: 'السعر', field: 'price' }
+        ]} 
+        data={products} 
+        actions={(row) => (
+          <div className="actions">
+            <button className="delete-btn" onClick={() => initiateDelete(row)}>حذف</button>
+          </div>
+        )}
       />
 
-      <div className="table-container">
-        <DataTable 
-          columns={columns} 
-          data={filteredProducts} 
-          // هنا أضفنا أزرار الحذف والتعديل فقط
-          actions={(row) => (
-            <div className="actions">
-              <button className="edit-btn" onClick={() => editProduct(row.id)}>تعديل</button>
-              <button className="delete-btn" onClick={() => deleteProduct(row.id)}>حذف</button>
+      {modal.show && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>سبب الحذف</h3>
+            <p>أنت تقوم بحذف المنتج: <strong>{modal.row.name}</strong></p>
+            <textarea 
+              placeholder="اكتب سبب الحذف للمستخدم..." 
+              value={reason} 
+              onChange={(e) => setReason(e.target.value)}
+            />
+            <div className="modal-actions">
+              <button className="cancel-btn" onClick={() => setModal({ show: false, row: null })}>إلغاء</button>
+              <button className="confirm-btn" onClick={confirmDelete}>إرسال الإشعار والحذف</button>
             </div>
-          )}
-        />
-      </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

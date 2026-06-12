@@ -1,0 +1,170 @@
+/* تنسيق عام للصفحة */
+.requests-container {
+    padding: 30px;
+    background-color: #f4f7f6;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.requests-container h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* تنسيق الجدول */
+.requests-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.requests-table th {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 18px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.requests-table td {
+    padding: 16px;
+    border-bottom: 1px solid #edf2f7;
+    color: #4a5568;
+}
+
+.requests-table tr:hover {
+    background-color: #f8fafc;
+    transition: 0.2s;
+}
+
+/* تنسيق النصوص والألوان */
+.text-green { color: #27ae60; font-weight: bold; }
+.text-red { color: #e74c3c; font-weight: bold; }
+
+.warning {
+    color: #e74c3c;
+    font-size: 0.75rem;
+    background: #fdeaea;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* تنسيق الأزرار الاحترافي */
+.btn-approve, .btn-reject {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-approve {
+    background-color: #27ae60;
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-approve:hover { background-color: #219150; transform: translateY(-2px); }
+
+.btn-reject {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-reject:hover { background-color: #c0392b; transform: translateY(-2px); }
+
+/* تنسيق الروابط */
+.requests-table a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.requests-table a:hover { text-decoration: underline; }
+/* خلفية النافذة المعتمة */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* تعتيم أغمق قليلاً */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* لضمان ظهورها فوق كل شيء */
+}
+
+/* صندوق النافذة نفسه */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 450px; /* عرض مناسب */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.modal-content textarea {
+    width: 100%;
+    height: 120px;
+    margin: 20px 0;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    resize: none; /* لمنع المستخدم من تغيير حجمها يدوياً */
+    box-sizing: border-box; /* لضمان عدم خروج الـ padding عن الحدود */
+}
+
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* ترتيب الأزرار */
+.modal-actions {
+    display: flex;
+    flex-direction: column; /* الأزرار فوق بعضها */
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* تنسيق زر الإلغاء */
+.modal-actions button:first-child {
+    background-color: #3498db;
+    color: white;
+}
+.modal-actions button:first-child:hover { background-color: #2980b9; }
+
+/* تنسيق زر تأكيد الرفض */
+.modal-actions .btn-reject {
+    margin-right: 0; /* لإلغاء المارجن القديم */
+    background-color: #e74c3c;
+    color: white;
+}
+.modal-actions .btn-reject:hover { background-color: #c0392b; }

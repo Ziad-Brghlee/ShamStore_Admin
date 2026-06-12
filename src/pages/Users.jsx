@@ -13,14 +13,12 @@ const Users = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
 
-  // دالة الحظر/التنشيط
   const toggleStatus = (id) => {
     setUsers(users.map(user => 
       user.id === id ? { ...user, isActive: !user.isActive } : user
     ));
   };
 
-  // فلترة المستخدمين بناءً على اسمهم (تستخدم في البحث)
   const filteredUsers = users.filter(user => 
     user.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -35,8 +33,6 @@ const Users = () => {
     <div className="users-page">
       <h1>إدارة المستخدمين</h1>
       
-      
-      {/* حقل البحث */}
       <input 
         type="text" 
         placeholder="ابحث عن مستخدم بالاسم..." 
@@ -44,10 +40,11 @@ const Users = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="search-input"
       />
+      
       <div className="table-container">
         <DataTable 
           columns={columns} 
-          data={filteredUsers} // هنا نمرر البيانات المفلترة
+          data={filteredUsers} 
           actions={(row) => (
             <button 
               onClick={() => toggleStatus(row.id)}

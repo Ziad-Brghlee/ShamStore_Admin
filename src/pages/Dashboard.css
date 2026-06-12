@@ -1,0 +1,35 @@
+.dashboard-page { padding: 30px; background-color: #f8fafc; }
+
+/* تصميم المربعات مع الـ Hover */
+.stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px; /* زوايا دائرية أكثر */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* ظل خفيف جداً في الحالة العادية */
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة انسيابية */
+  cursor: pointer;
+  border: 1px solid transparent; /* إزالة الحدود */
+}
+.stat-card:hover {
+  transform: translateY(-8px); /* رفعة بسيطة */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12); /* خيال (Shadow) عميق وناعم */
+  border: 1px solid rgba(0,0,0,0.05); /* شيء خفيف جداً يحدد المربع */
+}
+.stat-number { font-size: 1.8rem; font-weight: 800; color: #2563eb; margin: 10px 0; }
+.trend-up { color: #059669; font-size: 0.85rem; font-weight: 600; }
+
+/* توزيع القسم السفلي */
+.bottom-section { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+
+.chart-container, .reviews-container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+.activity-container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.activity-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #f1f5f9; }
+
+.status-badge { padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; }
+.pending { background: #fef3c7; color: #92400e; }
+.shipped { background: #d1fae5; color: #065f46; }
+.cancelled { background: #fee2e2; color: #991b1b; }

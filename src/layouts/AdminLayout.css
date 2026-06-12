@@ -1,0 +1,13 @@
+.admin-layout-wrapper {
+  display: flex;          /* هذا يضع القائمة بجانب المحتوى */
+  flex-direction: row-reverse; /* هذا هو السر: يضع القائمة يميناً */
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc; /* لون خلفية هادئ */
+}
+
+.main-content-area {
+  flex: 1;                /* يأخذ الجدول المساحة المتبقية */
+  padding: 20px;
+  overflow-y: auto;       /* يضمن ظهور سكرول إذا طال الجدول */
+}

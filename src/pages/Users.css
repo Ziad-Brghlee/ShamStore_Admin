@@ -56,6 +56,9 @@ h1 {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   border: 1px solid #e2e8f0;
   overflow-x: auto;
+    width: 100%;       /* اجعل الحاوية تأخذ عرض الصفحة بالكامل */
+  overflow-x: auto;  /* للسماح بالسكور إذا كانت الشاشة صغيرة */
+  margin-top: 10px
 }
 
 .custom-table {
@@ -106,3 +109,54 @@ h1 {
 .activate-btn:hover { 
   background-color: #059669; 
 }
+هو/* Users.css - تنسيق صفحة المستخدمين والجدول */
+.users-page {
+  padding: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-sizing: border-box; /* يمنع خروج الـ input عن العرض */
+}
+
+.table-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-table {
+  width: 100%; /* الجدول يأخذ عرض الحاوية بالكامل */
+  border-collapse: collapse;
+  direction: rtl; /* قلب الجدول ليكون من اليمين لليسار */
+}
+
+.custom-table th, .custom-table td {
+  padding: 16px;
+  text-align: right;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.custom-table th {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* الأزرار */
+.action-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.block-btn { background-color: #ef4444; color: white; }
+.activate-btn { background-color: #10b981; color: white; }

@@ -48,7 +48,7 @@ const Orders = () => {
       <div className="table-container">
         <DataTable 
           columns={columns} 
-          data={filteredOrders} // نمرر البيانات المفلترة هنا
+          data={filteredOrders} 
           actions={(row) => (
             <select 
               value={row.status} 

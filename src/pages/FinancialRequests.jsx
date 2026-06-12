@@ -11,23 +11,20 @@ const FinancialRequests = () => {
   const [selectedReq, setSelectedReq] = useState(null);
   const [rejectReason, setRejectReason] = useState("");
 
-  // دالة القبول
   const handleApprove = (id) => {
     console.log(`(تم قبول الطلب ${id})`);
     setRequests(requests.filter(r => r.id !== id));
   };
 
-  // دالة الرفض مع فحص الأمان
   const handleReject = () => {
-    if (!selectedReq) return; // فحص أمان لمنع الخطأ
+    if (!selectedReq) return; 
     
     console.log(`(تم رفض الطلب ${selectedReq.id} - السبب: ${rejectReason})`);
     
-    // هون مشان أربط 
     
     setShowModal(false);
     setRequests(requests.filter(r => r.id !== selectedReq.id));
-    setSelectedReq(null); // تصفير الحالة
+    setSelectedReq(null);
     setRejectReason("");
   };
 
@@ -65,7 +62,6 @@ const FinancialRequests = () => {
         </tbody>
       </table>
 
-      {/* النافذة المنبثقة للرفض */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">

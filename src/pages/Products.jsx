@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DataTable from '../components/DataTable';
+import toast from 'react-hot-toast';
 import './Products.css';
 
 const Products = () => {
@@ -17,8 +18,8 @@ const Products = () => {
 
   const confirmDelete = () => {
     if (!modal.row) return;
+    toast.success(`تم حذف المنتج ${modal.row.name} لسبب: ${reason}`);
     
-    console.log(`تم حذف المنتج ${modal.row.name} لسبب: ${reason}`);
     setProducts(products.filter(p => p.id !== modal.row.id));
     
     setModal({ show: false, row: null });

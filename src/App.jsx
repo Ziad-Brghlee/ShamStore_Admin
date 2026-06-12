@@ -14,16 +14,12 @@ import './App.css';
 function App() {
   return (
     <Routes>
-      {/* صفحة الدخول */}
       <Route path="/" element={<Login />} />
-
-      {/* باقي الصفحات داخل هذا المسار */}
       <Route path="/*" element={
         <div className='app-container'>
           <Sidebar />
           <div className='main-content'>
             <Routes>
-              {/* هنا نستخدم الحارس (ProtectedRoute) لحماية الصفحات */}
               <Route path="/Dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/Users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
               <Route path="/Products" element={<ProtectedRoute><Products /></ProtectedRoute>} />

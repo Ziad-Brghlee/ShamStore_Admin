@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import './OrdersMamagement.css';
 
 const OrdersManagement = () => {
-  // بيانات تجريبية للطلبات
   const [orders, setOrders] = useState([
     { id: 101, buyer: "خالد", seller: "متجر التقنية", amount: 500, date: "2026-06-05", status: 'Pending Delivery' },
     { id: 102, buyer: "سارة", seller: "أزياء عالمية", amount: 200, date: "2026-06-12", status: 'Pending Delivery' },
   ]);
 
-  // دالة حساب الأيام
   const getDaysPassed = (date) => {
     const diff = new Date() - new Date(date);
     return Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -19,7 +17,6 @@ const OrdersManagement = () => {
     if (reason) {
       console.log(`تم إلغاء الطلب ${order.id} للسبب: ${reason}`);
       setOrders(orders.filter(o => o.id !== order.id));
-      // هنا يتم استدعاء API لعمل Refund للمشتري
     }
   };
 

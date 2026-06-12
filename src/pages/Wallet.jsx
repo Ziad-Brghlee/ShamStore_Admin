@@ -2,7 +2,6 @@ import React from 'react';
 import './Wallet.css';
 
 const Wallet = () => {
-  // بيانات الأرباح (يتم جلبها من قاعدة البيانات)
   const earnings = [
     { id: 1, orderId: 101, seller: "متجر التقنية", total: 500, commission: 5 },
     { id: 2, orderId: 102, seller: "أزياء عالمية", total: 200, commission: 2 },

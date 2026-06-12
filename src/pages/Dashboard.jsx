@@ -15,7 +15,6 @@
       <div className="dashboard-page">
         <h1>لوحة التحكم الرئيسية</h1>
         
-        {/* 1. الإحصائيات مع مؤشر النمو */}
         <div className="stats-container">
           <div className="stat-card">
             <h3>إجمالي الأرباح</h3><p className="stat-number">7</p>
@@ -35,7 +34,6 @@
           </div>
         </div>
 
-        {/* 2. الرسم البياني + التقييمات في صف واحد */}
         <div className="bottom-section">
           <div className="chart-container">
             <h3>حركة الطلبات خلال الأسبوع</h3>
@@ -51,7 +49,6 @@
           </div>
 
                       
-                      {/* بدلاً من التقييمات، سنضع قائمة بحالات الطلبات */}
             <div className="activity-container">
               <h3>آخر عمليات النظام</h3>
               <div className="activity-item">

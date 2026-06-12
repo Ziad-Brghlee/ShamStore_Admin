@@ -10,7 +10,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     
-    // هنا نقوم بعملية الانتقال للداشبورد بعد ضغط الزر
     if (email && password) {
        localStorage.setItem('isLoggedIn', 'true'); 
     navigate('/Dashboard');

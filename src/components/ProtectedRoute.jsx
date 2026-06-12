@@ -1,5 +1,4 @@
 import { Navigate } from 'react-router-dom';
-import 'Fina'
 
 const ProtectedRoute = ({ children }) => {
   // الحارس يسأل: هل يوجد مفتاح في "جيب" المتصفح (localStorage)؟

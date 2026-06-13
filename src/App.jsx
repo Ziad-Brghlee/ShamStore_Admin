@@ -6,7 +6,7 @@ import Users from './pages/Users';
 import Products from './pages/Products';
 import Orders from './pages/Orders';
 import Wallet from './pages/Wallet';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './routes/ProtectedRoute';
 import FinancialRequests from './pages/FinancialRequests';
 import OrdersManagement from './pages/OrdersManagement';
 import './App.css';

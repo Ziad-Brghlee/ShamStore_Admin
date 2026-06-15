@@ -1,0 +1,10 @@
+.ads-container { padding: 20px; font-family: sans-serif; direction: rtl; }
+.ad-card { border: 1px solid #e0e0e0; padding: 15px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; background: #fff; }
+.ad-info h3 { margin: 0 0 5px 0; color: #333; }
+.ad-info p { margin: 0; color: #666; font-size: 0.9rem; }
+.btn-group { display: flex; gap: 10px; }
+button { padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+.btn-accept { background-color: #28a745; color: white; }
+.btn-accept:hover { background-color: #218838; }
+.btn-reject { background-color: #dc3545; color: white; }
+.btn-reject:hover { background-color: #c82333; }

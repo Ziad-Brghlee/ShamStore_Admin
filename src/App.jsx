@@ -9,6 +9,8 @@ import Wallet from './pages/Wallet';
 import ProtectedRoute from './routes/ProtectedRoute';
 import FinancialRequests from './pages/FinancialRequests';
 import OrdersManagement from './pages/OrdersManagement';
+import Ads from './pages/Ads';
+
 import './App.css';
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
               <Route path="/Wallet" element={<ProtectedRoute><Wallet /></ProtectedRoute>} />
               <Route path="/FinancialRequests" element={<ProtectedRoute><FinancialRequests /></ProtectedRoute>} />
               <Route path="/OrdersManagement" element={<ProtectedRoute><OrdersManagement /></ProtectedRoute>} />
+              <Route path="/Ads" element={<ProtectedRoute><Ads /></ProtectedRoute>} />
             </Routes>
           </div>
         </div>

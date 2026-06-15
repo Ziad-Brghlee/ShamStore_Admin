@@ -26,6 +26,9 @@ function Sidebar() {
             <NavLink to="/OrdersManagement" className="sidebar-link">
                 Orders Management
             </NavLink>
+            <NavLink to="/Ads" className="sidebar-link">
+                Ads
+            </NavLink>
         </div>
     
     ); 

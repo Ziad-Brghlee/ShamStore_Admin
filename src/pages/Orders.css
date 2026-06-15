@@ -15,10 +15,9 @@
 
 .modern-select:focus { outline: none; transform: scale(1.05); }
 
-/* ألوان غامقة وقوية */
-.done { background-color: #065f46 !important; color: #ffffff !important; } /* أخضر غامق */
-.pending { background-color: #92400e !important; color: #ffffff !important; } /* برتقالي غامق */
-.rejected { background-color: #991b1b !important; color: #ffffff !important; } /* أحمر غامق جداً */
+.done { background-color: #065f46 !important; color: #ffffff !important; };
+.pending { background-color: #92400e !important; color: #ffffff !important; }  
+.rejected { background-color: #991b1b !important; color: #ffffff !important; } 
 
 /* تنسيق إضافي للحاوية والجدول */
 .table-container {

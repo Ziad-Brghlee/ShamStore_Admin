@@ -14,7 +14,7 @@ const Ads = () => {
 if (action === 'رفض') {
       toast.error(`فشل رفض الإعلان رقم ${id}`);
     } else {
-      toast.success(`تم قبول الإعلان رقم ${id}`);
+      toast.success(`تم قبول الإعلان رقم وخصم 1$ من حسابك: ${id}`);
     }   
   };
 

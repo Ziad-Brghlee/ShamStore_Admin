@@ -31,6 +31,22 @@
           <div className="stat-card">
             <h3>الطلبات</h3><p className="stat-number">342</p>
             <p className="trend-up">▲ 8% عن الأسبوع الماضي</p>
+            
+          </div>
+          <div className="stat-card">
+            <h3>عمليت الشراء</h3><p className="stat-number">342</p>
+            <p className="trend-up">▲ 8% عن الأسبوع الماضي</p>
+            
+          </div>
+             <div className="stat-card">
+            <h3>عدد المنتجات</h3><p className="stat-number">342</p>
+            <p className="trend-up">▲ 8% عن الأسبوع الماضي</p>
+            
+          </div>
+             <div className="stat-card">
+            <h3>عمليت الشراء</h3><p className="stat-number">342</p>
+            <p className="trend-up">▲ 8% عن الأسبوع الماضي</p>
+            
           </div>
         </div>
 
